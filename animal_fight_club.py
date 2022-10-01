@@ -1,38 +1,47 @@
-from random import randint
-class Animal:
-    def __init__(self, name, emote="roars"):
-        self.name = name
-        self.emote = emote
-        self.wins = 0
+from random import choice, randint, sample
 
-    def ROAR(self):
-        print(f'{self.name} {self.emote}')
-
-    def fights(self, opponent):
-        winner = [self, opponent][randint(0, 1)]
-        winner.wins += 1
-        return winner
+from models import Animal, Referee
 
 
-class Bird(Animal):
-    def flap(self):
-        print(f'{self.name} *fwap fwap fwap*')
+ANIMALS = [
+    "lion",
+    "bear",
+    "bluebird",
+    "duck",
+    "mouse",
+    "elephant",
+    "Stuart",
+    "pangolin",
+    "armadillo",
+    "newt",
+    "wolverine",
+    "komodo dragon",
+    "basilisk",
+    "unicorn",
+    "garter snake",
+    "koala",
+]
+
+EMOTES = [
+    "roar",
+    "growl",
+    "hiss",
+    "ffft",
+    "hoooah",
+    "huzzah",
+    "squeak",
+    "plap",
+    "groan",
+    "zzz",
+    "keekee",
+    "caw",
+    "honk",
+]
 
 
+ref = Referee("Telemachus")
+for animal in sample(ANIMALS, randint(3, 10)):
+    combatant = Animal(animal, choice(EMOTES))
+    ref.add_combatant(combatant)
 
-
-lion = Animal("lion")
-bear = Bird("bear")
-duck = Bird("duck", "quacks")
-while max([lion.wins, bear.wins, duck.wins]) < 100:
-
-    duck.fights(bear)
-    bear.fights(lion)
-    lion.fights(duck)
-
-
-sorted([lion, bear, duck], key=lambda a: a.wins, reverse=True)[0].ROAR()
-print("record: ")
-print(f'  lion: {lion.wins}')
-print(f'  bear: {bear.wins}')
-print(f'  duck: {duck.wins}')
+ref.fight()
