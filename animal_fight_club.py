@@ -9,4 +9,4 @@ for animal in sample(ANIMALS, randint(3, 10)):
     combatant = Animal(animal, choice(EMOTES))
     ref.add_combatant(combatant)
 
-ref.fight()
+ref.run_tournament()

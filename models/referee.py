@@ -42,8 +42,8 @@ class Referee:
 
         return pairings
 
-    def fight(self, to: int = 100) -> Fighter:
-        """Start and complete the fight, returning the winner."""
+    def run_tournament(self, to: int = 100) -> Fighter:
+        """Start and complete the tournament, returning the winner."""
         self.announce()
         print(f"All right everyone, i want a good clean fight. First to {to}!\n")
         while max(combatant.wins for combatant in self.combatant_list) < to:
