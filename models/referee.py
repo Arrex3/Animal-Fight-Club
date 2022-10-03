@@ -4,37 +4,8 @@ from operator import attrgetter
 from random import choice
 from typing import List, Tuple
 
+from data import CORNERS, HYPE
 from models.fighter import Fighter
-
-
-CORNERS = [
-    "left",
-    "right",
-    "far",
-    "near",
-    "top-left",
-    "top-right",
-    "top-middle",
-    "left-middle",
-    "right-middle",
-    "bottom-right",
-    "bottom-left",
-    "bottom-middle",
-    "kitty",
-]
-
-HYPE = [
-    "all the way from Saskatoon",
-    "still wearing their bathrobe",
-    "with a face only their mother could love",
-    "trembling like a newborn deer",
-    "looking like they don't know where they are",
-    "texting their buddies back home",
-    "building a card tower",
-    "brushing their teeth with steel wool",
-    "with rage in their eyes",
-    "like they've got somethin' to prove",
-]
 
 
 class Referee:

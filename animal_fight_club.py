@@ -1,42 +1,7 @@
 from random import choice, randint, sample
 
+from data import ANIMALS, EMOTES
 from models import Animal, Referee
-
-
-ANIMALS = [
-    "lion",
-    "bear",
-    "bluebird",
-    "duck",
-    "mouse",
-    "elephant",
-    "Stuart",
-    "pangolin",
-    "armadillo",
-    "newt",
-    "wolverine",
-    "komodo dragon",
-    "basilisk",
-    "unicorn",
-    "garter snake",
-    "koala",
-]
-
-EMOTES = [
-    "roar",
-    "growl",
-    "hiss",
-    "ffft",
-    "hoooah",
-    "huzzah",
-    "squeak",
-    "plap",
-    "groan",
-    "zzz",
-    "keekee",
-    "caw",
-    "honk",
-]
 
 
 ref = Referee("Telemachus")
